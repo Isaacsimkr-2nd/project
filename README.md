@@ -2,17 +2,11 @@
 
 ## 목표 
 
-### 4.5.0 튜토리얼 진행 
-- 4.5.0 버전 입문편 재진행 
-- 키네시스님 및 심심님 
+### turtle_llm 
 
+llm으로 turtlebot 제어하기 
 
-### LLM 프로젝트 
-- LLM을 이용해서 SLAM 및 MoveIt 등 로봇 제어
+### turtle_agent 
 
-
-## 진행 
-각자 자기 이름 branch 파서 코드 공유 및 진행? 
-
-
+agent로 turtlebot 제어하기 
 
