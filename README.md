@@ -10,3 +10,15 @@ llm으로 turtlebot 제어하기
 
 agent로 turtlebot 제어하기 
 
+
+## agent 체험하기 
+
+yolo_agent.ipynb 
+
+
+yolo_agent.ipynb 에서 agent를 체험하세요.
+
+.env.example 파일에서 이름에 example을 빼고 .env 파일에 openai api 키를 넣으세요.
+
+https://openai.com/index/openai-api/
+
