@@ -15,19 +15,19 @@ from rich.text import Text
 
 
 from rosa import ROSA
-from .tools import pinky as pinky_tools
+from .tools import turtlebot3 as turtlebot3_tools
 from .help import get_help
 from .llm import get_llm
 from .prompts import get_prompts
 
 
 @tool
-def cool_pinky_tool():
-    """A cool pinky tool that doesn't really do anything."""
-    return "This is a cool pinky tool! It doesn't do anything, but it's cool."
+def cool_turtlebot3_tool():
+    """A cool turtlebot3 tool that doesn't really do anything."""
+    return "This is a cool turtlebot3 tool! It doesn't do anything, but it's cool."
 
 
-class PinkyAgent(ROSA):
+class TurtleBot3Agent(ROSA):
     def __init__(self, streaming: bool = False, verbose: bool = True):
         self.__blacklist = ["master", "docker"]
         self.__prompts = get_prompts()
@@ -38,13 +38,13 @@ class PinkyAgent(ROSA):
         blast_off = Tool(
             name="blast_off",
             func=self.blast_off,
-            description="Make the pinky blast off!",
+            description="Make the turtlebot3 blast off!",
         )
 
         super().__init__(
             llm=self.__llm,
-            tools=[cool_pinky_tool, blast_off],
-            tool_packages=[pinky_tools],
+            tools=[cool_turtlebot3_tool, blast_off],
+            tool_packages=[turtlebot3_tools],
             blacklist=self.__blacklist,
             prompts=self.__prompts,
             verbose=verbose,
@@ -54,7 +54,7 @@ class PinkyAgent(ROSA):
 
         self.examples = [
             "Give me a ROS tutorial.",
-            "Show me how to move the pinky forward.",
+            "Show me how to move the turtlebot3 forward.",
             "Give me a list of nodes, topics, services, params, and log files.",
         ]
 
@@ -69,14 +69,14 @@ class PinkyAgent(ROSA):
         Ok, we're blasting off at the speed of light!
 
         <ROSA_INSTRUCTIONS>
-            You should now use your tools to make the pinky move around the screen at high speeds.
+            You should now use your tools to make the turtlebot3 move around the screen at high speeds.
         </ROSA_INSTRUCTIONS>
         """
 
     @property
     def greeting(self):
         greeting = Text(
-            "\n안녕하세요! 저는 핑키 에이전트입니다 🐖🤖. 무엇을 도와드릴까요?\n"
+            "\n안녕하세요! 저는 Turtlebot3 에이전트입니다 🤖. 무엇을 도와드릴까요?\n"
         )
         greeting.stylize("frame bold blue")
         greeting.append(
@@ -109,7 +109,7 @@ class PinkyAgent(ROSA):
 
     async def run(self):
         """
-        PinkyAgent의 메인 상호작용 루프를 실행합니다.
+        turtlebot3Agent의 메인 상호작용 루프를 실행합니다.
         콘솔 인터페이스를 초기화하고 사용자 입력을 지속적으로 처리합니다.
         'help', 'examples', 'clear', 'exit' 명령 및 사용자 질의를 처리합니다.
         """
@@ -243,9 +243,9 @@ def main():
 
     # ROS2에서는 파라미터 서버 대신 환경변수나 명령줄 인자를 사용합니다.
     streaming = os.getenv("STREAMING", "False").lower() in ["true", "1", "yes"]
-    pinky_agent = PinkyAgent(verbose=True, streaming=streaming)
+    turtlebot3_agent = TurtleBot3Agent(verbose=True, streaming=streaming)
 
-    asyncio.run(pinky_agent.run())
+    asyncio.run(turtlebot3_agent.run())
 
 
 if __name__ == "__main__":
@@ -256,4 +256,4 @@ if __name__ == "__main__":
         rclpy.shutdown()
 
 
-# ros2 run pinky_agent pinky_agent
+# ros2 run turtlebot3_agent turtlebot3_agent

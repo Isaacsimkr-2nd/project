@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'pinky_agent'
+package_name = 'turtlebot3_agent'
 
 setup(
     name=package_name,
@@ -13,14 +13,14 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='pinky',
+    maintainer='khw',
     maintainer_email='khw11044@pinklab.art',
     description='TODO: Package description',
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'pinky_agent = pinky_agent.pinky_agent:main'
+            'turtlebot3_agent = turtlebot3_agent.turtlebot3_agent:main'
         ],
     },
 )

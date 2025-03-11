@@ -36,7 +36,7 @@ def get_help(examples: List[str]) -> str:
         <template>
             ```shell
             ROSA - Robot Operating System Agent
-            Embodiment: Pinky bot
+            Embodiment: TurtleBot3 bot
 
             ========================================
 

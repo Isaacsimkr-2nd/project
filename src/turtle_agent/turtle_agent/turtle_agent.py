@@ -42,7 +42,6 @@ class TurtleAgent(ROSA):
         )
 
         super().__init__(
-            ros_version=2,
             llm=self.__llm,
             tools=[cool_turtle_tool, blast_off],
             tool_packages=[turtle_tools],
